@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task setter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p style="background-image: url('images/space\ galaxy\ animated\ GIF.gif');">
+        <div class="Home">
+            <a href="/home/middle.html" class="btn light">Home</a>
+        </div>
+    <header>
+        <h1>Task Manager</h1>
+    </header>
+
+    <div id="task-form">
+        <h2>Add Task</h2>
+        <form id="add-task-form">
+            <label for="task">Task:</label>
+            <input type="text" id="task" required>
+            <label for="due-date">Due Date:</label>
+            <input type="date" id="due-date" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+    <div id="task-list">
+        <h2>Task List</h2>
+        <div id="tasks"></div>
+    </div>
+
+    <script>
+        const taskForm = document.getElementById('add-task-form');
+        const taskList = document.getElementById('tasks');
+
+        taskForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const taskInput = document.getElementById('task');
+            const dueDateInput = document.getElementById('due-date');
+
+            const task = taskInput.value;
+            const dueDate = dueDateInput.value;
+
+            if (task && dueDate) {
+                addTaskToList(task, dueDate);
+                taskInput.value = '';
+                dueDateInput.value = '';
+            }
+        });
+
+        function addTaskToList(task, dueDate) {
+            const taskItem = document.createElement('div');
+            taskItem.classList.add('task');
+            taskItem.innerHTML = `
+                <span>${task} - ${dueDate}</span>
+                <button onclick="removeTask(this)">Remove</button>
+            `;
+            taskList.appendChild(taskItem);
+        }
+
+        function removeTask(button) {
+            const taskItem = button.parentNode;
+            taskList.removeChild(taskItem);
+        }
+    </script>    
+    </p>
+</body>
+</html>
