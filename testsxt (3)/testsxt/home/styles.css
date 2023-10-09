@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+/* Set the background image */
+body {
+    background-image: url('./images/giphy.gif'); /* Replace 'your_image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: repeat; /* Prevent repeating the image */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fixed background */
+    font-family: 'Courier Prime', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-position: top;
+}
+
+/* Style for the login container */
+.login-container {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for the login container */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Other login styles go here */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); /* Scale the background to 110% */
+    }
+}
+
+/* Style for the login container */
+.login-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Your existing CSS styles */
+
+h1 {
+    font-size: 40px;
+    color: gray;
+    text-align: center;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9
+        );
+    }
+}
+a.btn{
+    border-radius: 6px;
+    padding: auto;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 500ms;
+}
+a.btn.light{
+    border: 2px solid black;
+}
+a.btn.light:hover{
+    background-color: var(--dark-color);
+    color: white;
+}
